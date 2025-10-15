@@ -1,1 +1,10 @@
-
+body{
+    background-color: rgb(242, 241, 235);
+}
+p{
+    line-height: 2.0em;
+}
+img{
+    width:300px;
+    float: left;
+}
