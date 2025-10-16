@@ -1,10 +1,54 @@
 body{
-    background-color: rgb(242, 241, 235);
+    background-color: rgb(255, 254, 247);
+    color: #000;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+    background-color: #FFC5D3;
+    border: 3px solid black;
+    border-radius: 17px;
+    padding: 10px;
+    text-align: center;
+    width: 40%;
+    margin: 20px auto;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+h2{
+    font-size: 1.3em;
+    text-align: center;
+    font-style: italic;
+}
+h3{
+    border-left: 20px double #AFD5F0;
+    padding-left: 15px;
+    border-radius: 30px;
 }
 p{
     line-height: 2.0em;
+    padding: 20px;
 }
 img{
     width:300px;
+    border: 2px dotted #000;
+    border-radius: 20px;
     float: left;
+    margin-right: 20px;
 }
+
+/* PSEUDO SELECTORS */
+a:link{
+    color: purple;
+    text-decoration: none;
+    font-weight: bold;
+}
+a:visit{
+    color: pink;
+}
+a:hover{
+    color: blue;
+}
+a:active{
+    color: black;
+}
+
+/* ID RULES */
