@@ -1,7 +1,14 @@
 body{
-    background-color: rgb(255, 254, 247);
+    background-color: #FFC5D3;
     color: #000;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 15px;
+}
+#container{
+    width: 800px;
+    margin: 20px auto;
+    background-color: whitesmoke;
+    padding: 15px;
 }
 h1{
     background-color: #FFC5D3;
@@ -26,6 +33,7 @@ h3{
 p{
     line-height: 2.0em;
     padding: 20px;
+    border: 3px solid black;
 }
 img{
     width:300px;
@@ -52,3 +60,14 @@ a:active{
 }
 
 /* ID RULES */
+#pic2{
+    float: right;
+
+/* CLASS RULE */
+.highlight{
+    background-color: lightgoldenrodyellow;
+    color: black;
+    padding: 2px;
+    border-radius: 3px;
+    font-weight: bold;
+}
