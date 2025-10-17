@@ -80,15 +80,17 @@ a:active{
     width: 175px;
 }
 #sidebar h3{
-    border: none;
     text-align: center;
     padding: none;
+    margin-left: 5px;
+    margin-right: 5px;
     border: 3px dashed black;
+    border-radius: 17px;
 }
 @media (max-width: 1200px){
     #container{
-        background-color:#AFD5F0;
         width: 800px;
+        background-color:aliceblue;
     }
 }
 @media (max-width: 992px){
@@ -97,15 +99,12 @@ a:active{
         width: 100%;
     }
     body, p, #container{
-        margin: 0;
+        margin: 5px;
         border: none;
         padding: 0;
         background-color:#FFC5D3;
     }
-    p{
-        padding 20px;
     }
-}
 @media (max-width: 768px){
     #sidebar{
         display: none;
