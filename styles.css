@@ -71,6 +71,17 @@ a:active{
     border-radius: 3px;
     font-weight: bold;
 }
+
+.divider{
+    aspect-ratio: 960/300;
+    background: no-repeat center;
+    background-size: cover;
+}
+
+.wave-1{
+    background-image: url('./')
+}
+
 #sidebar{
     background-color: #AFD5F0;
     border: 2px solid black;
@@ -104,6 +115,9 @@ a:active{
         padding: 0;
         background-color:#FFC5D3;
     }
+    h1{
+        background-color: white;
+    }
     }
 @media (max-width: 768px){
     #sidebar{
@@ -111,6 +125,7 @@ a:active{
     }
     h1{
         border: none;
+        background-color:#FFC5D3;
     }
     img{
         width: 200px;
