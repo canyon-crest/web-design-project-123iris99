@@ -71,11 +71,6 @@ a:active{
     border-radius: 3px;
     font-weight: bold;
 }
-.animated-border{
-    width: 300px;
-    height: 300px;
-    background: red;
-}
 #sidebar{
     background-color: #AFD5F0;
     float: right;
