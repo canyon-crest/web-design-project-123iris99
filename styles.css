@@ -66,6 +66,80 @@ a:active{
     margin-bottom: none;
     margin-top: 15px;
 }
+/* ...existing code... */
+
+/* Waves: stretch to container edges and band between them */
+#container { position: relative; }
+
+/* wave: stretch to cover container padding (container padding is 15px in your CSS) */
+.wave {
+    display: block;
+    width: calc(100% + 30px);   /* cover container padding (15px each side) */
+    margin: 0 -15px;            /* pull to container edges */
+    height: clamp(56px, 8vw, 120px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* wave color SVG (keeps your chosen color #AFD5F0) */
+.wave--light {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'><path d='M0 40 C150 90 350 -10 600 40 C850 90 1050 -10 1200 40 L1200 120 L0 120 Z' fill='%23AFD5F0'/></svg>");
+}
+
+/* the band between waves: full width, same color, and align with the waves */
+.wave-area {
+    background-color: #AFD5F0;     /* band color matches wave */
+    margin: 0 -15px;               /* align to same edges as .wave */
+    padding: 1rem 15px;            /* inner spacing; matches container padding */
+    position: relative;
+    z-index: 1;                    /* underneath the wave (waves have z-index:2) */
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+/* ensure text inside the band shows on top of the colored background:
+   remove borders and make backgrounds transparent so band reads as continuous */
+.wave-area h3,
+.wave-area p {
+    background: transparent;
+    border: none;            /* remove the 3px border set on p globally */
+    color: #000;
+    margin: 0 0 0.5rem 0;
+    padding: 0.5rem 0;
+}
+
+/* images inside band shouldn't float outside the band */
+.wave-area img {
+    float: none;
+    display: block;
+    max-width: 100%;
+    margin: 0 auto 0.75rem;
+}
+
+/* make sure following content sits above wave and has spacing */
+.wave + .wave-area,
+.wave-area + .wave {
+    position: relative;
+}
+
+/* adjust small spacing so text doesn't overlap wave shape */
+.wave + .wave-area > * {
+    margin-top: 0.25rem;
+}
+
+/* dark mode: band color remains same (or change if you prefer another dark fill) */
+@media (prefers-color-scheme: dark) {
+    .wave--light {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'><path d='M0 40 C150 90 350 -10 600 40 C850 90 1050 -10 1200 40 L1200 120 L0 120 Z' fill='%23AFD5F0'/></svg>");
+    }
+    .wave-area { background-color: #AFD5F0; }
+}
+
+/* ...existing code... */
+
 /* CLASS RULE */
 .highlight{
     background-color: lightgoldenrodyellow;
@@ -120,7 +194,6 @@ a:active{
         width: 100%;
     }
 }
-
 @media (max-width: 1200px){
     #container{
         width: 800px;
