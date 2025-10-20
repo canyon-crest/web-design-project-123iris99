@@ -140,6 +140,17 @@ a:active{
 
 /* ...existing code... */
 
+// ...existing code...
+/* Rotate the bottom wave so the wavy part faces downward */
+.wave + .wave-area + .wave {
+    transform: rotate(180deg);
+    transform-origin: center;
+    backface-visibility: hidden;
+    /* tiny upward nudge to remove any hairline gap — adjust if needed */
+    margin-top: -1px;
+}
+/* ...existing code... */
+
 /* CLASS RULE */
 .highlight{
     background-color: lightgoldenrodyellow;
