@@ -209,7 +209,6 @@ a:active{
 @media (max-width: 1200px){
     #container{
         width: 800px;
-        background-color:aliceblue;
     }
 }
 @media (max-width: 992px){
@@ -223,10 +222,75 @@ a:active{
         padding: 0;
         background-color:#FFC5D3;
     }
+    body{
+        background-image: none;
+        background-color:#FFC5D3;
+    }
     h1{
         background-color: white;
     }
+    h3{
+        border-left: none;
+        border-radius: none;
     }
+
+/* Add this at the end of the file (or inside the existing @media (max-width: 992px) block).
+   It restores inner horizontal padding so the right side has the same gap as the left. */
+@media (max-width: 992px) {
+  /* ensure container keeps inner spacing */
+  #container {
+    padding: 0 12px !important;
+    box-sizing: border-box;
+  }
+  #container p {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box;
+  }
+  #container h3 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    box-sizing: border-box;
+  }
+}
+    .wave, .wave--light {
+        display: none !important;
+        background-image: none !important;
+    }
+    .wave-area {
+        background-color: transparent !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+    /* restore normal paragraph/h3 styling inside the former band */
+    .wave-area p,
+    .wave-area h3 {
+        border: 3px solid #000 !important;
+        background: transparent !important;
+        padding: 20px !important;
+        margin: 0 0 1rem 0 !important;
+        color: inherit !important;
+    }
+    .wave-area h3 {
+        border: none !important;
+        border-left: none !important;    /* remove the purple left border */
+        padding-left: 15px !important;
+        border-radius: none !important;
+        margin: 0 0 0.5rem 0 !important;
+        background: transparent !important;
+        color: inherit !important;
+}
+#container p:first-of-type,
+  #container > p:first-child {
+    border: 3px solid #000 !important;
+    padding: 20px !important;
+    border-radius: 6px !important;
+    background-color: transparent !important;
+    margin: 0 0 1rem 0 !important;
+    box-sizing: border-box !important;
+  }
+}
 @media (max-width: 768px){
     #sidebar{
         display: none;
@@ -240,6 +304,10 @@ a:active{
     }
     img{
         width: 200px;
+    }
+    h3{
+        border-left: none;
+        border-radius: none;
     }
 }
 
@@ -261,3 +329,43 @@ a:active{
     background: transparent !important;
     margin: 0 0 0.5rem 0 !important;
 }
+@media (max-width: 992px) {
+  .wave-area h3 {
+    border-left: none !important;
+    border: none !important;
+  }
+}
+
+/* ...existing code... */
+
+html, body {
+  overflow-x: hidden; /* keep horizontal scroll hidden */
+}
+
+/* Contain waves to the #container width (not full viewport) */
+.wave,
+.wave-area {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  /* extend slightly to cover the container's padding (15px each side) */
+  width: calc(100% + 30px) !important;
+  margin: 0 -15px !important;
+  box-sizing: border-box !important;
+  background-size: 104% 100% !important;
+}
+
+/* #container should keep its max-width behavior */
+#container {
+  max-width: 800px; /* restore the intended content width (adjust if you changed it elsewhere) */
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box !important;
+}
+
+/* keep waves hidden at narrow breakpoints if desired */
+@media (max-width: 992px) {
+  .wave, .wave-area { width: calc(100% + 24px) !important; margin: 0 -12px !important; }
+}
+
+/* ...existing code... */
