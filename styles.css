@@ -25,9 +25,13 @@ h2{
     font-style: italic;
 }
 h3{
-    border-left: 20px double #C6BADE;
+    border-left: 20px double #C6BADE !important;
     padding-left: 15px;
     border-radius: 30px;
+}
+#sidebar h3 {
+  border-left: none !important;
+  padding-left: 0 !important;
 }
 p{
     line-height: 2.0em;
@@ -49,7 +53,7 @@ a:link{
     font-weight: bold;
 }
 a:visit{
-    color: pink;
+    color: rgb(245, 134, 152);
 }
 a:hover{
     color: blue;
@@ -230,7 +234,7 @@ a:active{
         background-color: white;
     }
     h3{
-        border-left: none;
+        border-left: none !important;
         border-radius: none;
     }
 
@@ -241,6 +245,14 @@ a:active{
   #container {
     padding: 0 12px !important;
     box-sizing: border-box;
+  }
+#container p h3,
+  .wave-area p h3,
+  /* defensive: direct-child variant if used */
+  #container p > h3,
+  .wave-area p > h3 {
+    border-left: none !important;
+    padding-left: 0 !important;
   }
   #container p {
     padding-left: 20px !important;
@@ -302,14 +314,30 @@ a:active{
         border: none;
         background-color:#FFC5D3;
     }
-    img{
-        width: 200px;
-    }
+  h2 {
+    font-size: clamp(1rem, 4.2vw, 1.25rem) !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+    padding: 0 12px !important; /* give horizontal breathing room */
+    margin: 0.5rem 0 !important;
+  }
+
+  /* if h2 uses .animation, allow it to wrap */
+  h2 .animation,
+  h2 span.animation {
+    display: inline !important;
+    white-space: normal !important;
+  }
+}
     h3{
         border-left: none;
         border-radius: none;
     }
-}
+
 
 .wave-area p#p2,
 #p2,
@@ -367,10 +395,6 @@ html, body {
 @media (max-width: 992px) {
   .wave, .wave-area { width: calc(100% + 24px) !important; margin: 0 -12px !important; }
 }
-
-/* ...existing code... */
-
-/* ...existing code... */
 
 /* Ensure paragraph 2 matches other paragraphs: same 3px border, padding, and horizontal spacing.
    Put this at the end of the file to override earlier .wave-area rules. */
