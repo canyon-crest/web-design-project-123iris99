@@ -77,7 +77,7 @@ a:active{
     display: block;
     width: calc(100% + 30px);   /* cover container padding (15px each side) */
     margin: 0 -15px;            /* pull to container edges */
-    height: clamp(36px, 5.5vw, 72px);
+    height: clamp(28px, 4.5vw, 60px);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
@@ -369,3 +369,91 @@ html, body {
 }
 
 /* ...existing code... */
+
+/* ...existing code... */
+
+/* Ensure paragraph 2 matches other paragraphs: same 3px border, padding, and horizontal spacing.
+   Put this at the end of the file to override earlier .wave-area rules. */
+.wave-area,
+#container { box-sizing: border-box !important; }
+
+/* Make p#p2 identical to the site's paragraph rules */
+.wave-area p#p2,
+#p2,
+#container p:nth-of-type(2) {
+  border: 3px solid #000 !important;       /* same border thickness */
+  padding: 20px !important;                /* same inner spacing */
+  border-radius: 6px !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+  width: auto !important;                  /* do not overflow container */
+  margin: 0 0 1rem 0 !important;           /* same vertical spacing as other paragraphs */
+}
+
+/* Ensure horizontal gaps match the other paragraphs (images float and text wraps the same) */
+.wave-area p#p2 img,
+#p2 img,
+#container p:nth-of-type(2) img {
+  float: left !important;
+  width: 300px !important;
+  max-width: 100% !important;
+  margin-right: 20px !important;
+  display: block !important;
+}
+
+/* Make sure the colored band does not add extra horizontal inset */
+.wave-area {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  box-sizing: border-box !important;
+}
+
+/* Defensive: if any rule removed borders inside .wave-area, re-enable for other paras too */
+.wave-area p,
+.wave-area h3 {
+  /* leave h3/p without full box styles here; p#p2 overrides above */
+  box-sizing: border-box !important;
+}
+
+/* Ensure paragraph 2 matches other paragraphs: same 3px border, padding, and horizontal spacing.
+   Put this at the end of the file to override earlier .wave-area rules. */
+.wave-area,
+#container { box-sizing: border-box !important; }
+
+/* Make p#p2 identical to the site's paragraph rules */
+.wave-area p#p2,
+#p2,
+#container p:nth-of-type(2) {
+  border: 3px solid #000 !important;       /* same border thickness */
+  padding: 20px !important;                /* same inner spacing */
+  border-radius: 6px !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+  width: auto !important;                  /* do not overflow container */
+  margin: 0 0 1rem 0 !important;           /* same vertical spacing as other paragraphs */
+}
+
+/* Ensure horizontal gaps match the other paragraphs (images float and text wraps the same) */
+.wave-area p#p2 img,
+#p2 img,
+#container p:nth-of-type(2) img {
+  float: left !important;
+  width: 300px !important;
+  max-width: 100% !important;
+  margin-right: 20px !important;
+  display: block !important;
+}
+
+/* Make sure the colored band does not add extra horizontal inset */
+.wave-area {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  box-sizing: border-box !important;
+}
+
+/* Defensive: if any rule removed borders inside .wave-area, re-enable for other paras too */
+.wave-area p,
+.wave-area h3 {
+  /* leave h3/p without full box styles here; p#p2 overrides above */
+  box-sizing: border-box !important;
+}
